@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="ipad11_0rounded" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,21 +15,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="juego_memoria" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5BG-jC-Mn2" userLabel="Main">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="24" width="834" height="1150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-90-rtO" userLabel="Upper_stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="575"/>
                                         <subviews>
                                             <view contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="B4p-7U-Z8i" userLabel="Azul">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="409"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="417" height="575"/>
                                                 <color key="backgroundColor" red="0.081001456917491055" green="0.059584124757940615" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="ZyU-xg-YlF" userLabel="Rojo">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="409"/>
+                                                <rect key="frame" x="417" y="0.0" width="417" height="575"/>
                                                 <color key="backgroundColor" red="1" green="0.1165532287190697" blue="0.14725147234904268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
@@ -44,15 +44,15 @@
                                             <constraint firstAttribute="bottom" secondItem="B4p-7U-Z8i" secondAttribute="bottom" id="uC9-xj-4uz"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-vL-K2Q" userLabel="Lower_stack">
-                                        <rect key="frame" x="0.0" y="409" width="414" height="409"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-vL-K2Q" userLabel="Lower_stack">
+                                        <rect key="frame" x="0.0" y="575" width="834" height="575"/>
                                         <subviews>
-                                            <view contentMode="left" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CSl-yL-Qfm" userLabel="Verde">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="409"/>
+                                            <view contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="CSl-yL-Qfm" userLabel="Verde">
+                                                <rect key="frame" x="0.0" y="0.0" width="417" height="575"/>
                                                 <color key="backgroundColor" red="0.15840186973082593" green="1" blue="0.10006043730910086" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
-                                            <view contentMode="left" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HvX-9d-Fab" userLabel="Amarillo">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="409"/>
+                                            <view contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="HvX-9d-Fab" userLabel="Amarillo">
+                                                <rect key="frame" x="417" y="0.0" width="417" height="575"/>
                                                 <color key="backgroundColor" red="1" green="0.97548781555880337" blue="0.072382602456462108" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
