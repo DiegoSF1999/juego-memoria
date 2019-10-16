@@ -9,13 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
 
+    @IBOutlet var touch: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+        
+touch.isHidden = true
+        
+        
+      
 
-    @IBOutlet weak var probador: UILabel!
     
+        
+        
+        
+    
+    
+
+    }
 }
 

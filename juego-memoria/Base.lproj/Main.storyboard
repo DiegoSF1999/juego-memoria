@@ -14,58 +14,18 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="juego_memoria" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5BG-jC-Mn2" userLabel="Main">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5BG-jC-Mn2" userLabel="Touch">
                                 <rect key="frame" x="0.0" y="24" width="834" height="1150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-90-rtO" userLabel="Upper_stack">
                                         <rect key="frame" x="0.0" y="0.0" width="834" height="575"/>
-                                        <subviews>
-                                            <view contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="B4p-7U-Z8i" userLabel="Azul">
-                                                <rect key="frame" x="0.0" y="0.0" width="417" height="575"/>
-                                                <color key="backgroundColor" red="0.081001456917491055" green="0.059584124757940615" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                            <view contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="ZyU-xg-YlF" userLabel="Rojo">
-                                                <rect key="frame" x="417" y="0.0" width="417" height="575"/>
-                                                <color key="backgroundColor" red="1" green="0.1165532287190697" blue="0.14725147234904268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="ZyU-xg-YlF" secondAttribute="bottom" id="34P-I6-ltB"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZyU-xg-YlF" secondAttribute="trailing" id="5Wt-eZ-PMc"/>
-                                            <constraint firstItem="B4p-7U-Z8i" firstAttribute="leading" secondItem="t6j-90-rtO" secondAttribute="leading" id="ArX-9M-yDe"/>
-                                            <constraint firstItem="ZyU-xg-YlF" firstAttribute="top" secondItem="t6j-90-rtO" secondAttribute="top" id="OIH-Wf-j9E"/>
-                                            <constraint firstItem="ZyU-xg-YlF" firstAttribute="leading" secondItem="B4p-7U-Z8i" secondAttribute="trailing" id="dLb-N1-MWy"/>
-                                            <constraint firstItem="ZyU-xg-YlF" firstAttribute="leading" secondItem="B4p-7U-Z8i" secondAttribute="trailing" id="mCY-3X-Wnx"/>
-                                            <constraint firstItem="B4p-7U-Z8i" firstAttribute="top" secondItem="t6j-90-rtO" secondAttribute="top" id="tGv-pS-a42"/>
-                                            <constraint firstAttribute="bottom" secondItem="B4p-7U-Z8i" secondAttribute="bottom" id="uC9-xj-4uz"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-vL-K2Q" userLabel="Lower_stack">
                                         <rect key="frame" x="0.0" y="575" width="834" height="575"/>
-                                        <subviews>
-                                            <view contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="CSl-yL-Qfm" userLabel="Verde">
-                                                <rect key="frame" x="0.0" y="0.0" width="417" height="575"/>
-                                                <color key="backgroundColor" red="0.15840186973082593" green="1" blue="0.10006043730910086" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                            <view contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="HvX-9d-Fab" userLabel="Amarillo">
-                                                <rect key="frame" x="417" y="0.0" width="417" height="575"/>
-                                                <color key="backgroundColor" red="1" green="0.97548781555880337" blue="0.072382602456462108" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="HvX-9d-Fab" firstAttribute="leading" secondItem="CSl-yL-Qfm" secondAttribute="trailing" id="2Cw-Jl-24t"/>
-                                            <constraint firstItem="HvX-9d-Fab" firstAttribute="leading" secondItem="CSl-yL-Qfm" secondAttribute="trailing" id="4Dw-MS-TfS"/>
-                                            <constraint firstItem="HvX-9d-Fab" firstAttribute="top" secondItem="hdf-vL-K2Q" secondAttribute="top" id="GaA-vj-tKv"/>
-                                            <constraint firstAttribute="bottom" secondItem="CSl-yL-Qfm" secondAttribute="bottom" id="Mdi-1S-bd6"/>
-                                            <constraint firstItem="CSl-yL-Qfm" firstAttribute="leading" secondItem="hdf-vL-K2Q" secondAttribute="leading" id="bAQ-MV-blk"/>
-                                            <constraint firstItem="CSl-yL-Qfm" firstAttribute="top" secondItem="hdf-vL-K2Q" secondAttribute="top" id="kCV-LC-lz9"/>
-                                            <constraint firstAttribute="bottom" secondItem="HvX-9d-Fab" secondAttribute="bottom" id="l1D-XE-X4G"/>
-                                            <constraint firstAttribute="trailing" secondItem="HvX-9d-Fab" secondAttribute="trailing" id="mgv-0J-lyO"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -89,6 +49,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="touch" destination="8bC-Xf-vdC" id="0pb-9n-TmL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
