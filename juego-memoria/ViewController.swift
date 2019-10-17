@@ -11,12 +11,16 @@ import UIKit
 class ViewController: UIViewController {
     
     
+// Outlets
+    
 
-    @IBOutlet var touch: UIView!
+    @IBOutlet weak var Touch: UIStackView!
+    
+    // Codigo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-touch.isHidden = true
+Touch.isHidden = true
         
         
       
