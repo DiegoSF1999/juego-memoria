@@ -15,74 +15,42 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="juego_memoria" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="View" colorLabel="IBBuiltInLabel-Gray">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GsO-vz-gSj" userLabel="Show">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8ub-hk-oi4" userLabel="Show">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clW-lC-Xft">
-                                        <rect key="frame" x="8" y="0.0" width="398" height="141"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9A-Uq-6Fs">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="clW-lC-Xft" secondAttribute="height" multiplier="398:141" id="rs2-hi-erN"/>
+                                            <constraint firstAttribute="height" constant="120" id="rfz-Bh-Z8R"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ashe" translatesAutoresizingMaskIntoConstraints="NO" id="2fj-C7-6nl">
-                                        <rect key="frame" x="0.0" y="141" width="414" height="677"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ashe" translatesAutoresizingMaskIntoConstraints="NO" id="1Ki-ff-mF1">
+                                        <rect key="frame" x="0.0" y="120" width="414" height="698"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="clW-lC-Xft" firstAttribute="top" secondItem="GsO-vz-gSj" secondAttribute="top" id="3ZR-WE-UMO"/>
-                                    <constraint firstItem="2fj-C7-6nl" firstAttribute="top" secondItem="clW-lC-Xft" secondAttribute="bottom" id="EZa-Ii-CYg"/>
-                                    <constraint firstAttribute="trailing" secondItem="2fj-C7-6nl" secondAttribute="trailing" id="Odu-aN-3VY"/>
-                                    <constraint firstItem="2fj-C7-6nl" firstAttribute="leading" secondItem="GsO-vz-gSj" secondAttribute="leading" id="Qa7-Iz-Fzc"/>
-                                    <constraint firstItem="clW-lC-Xft" firstAttribute="trailing" secondItem="GsO-vz-gSj" secondAttribute="trailingMargin" id="WWC-tT-xqb"/>
-                                    <constraint firstItem="clW-lC-Xft" firstAttribute="leading" secondItem="GsO-vz-gSj" secondAttribute="leadingMargin" id="X3d-k7-FVb"/>
-                                    <constraint firstAttribute="bottom" secondItem="2fj-C7-6nl" secondAttribute="bottom" id="Z4m-Xl-8vc"/>
-                                </constraints>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5BG-jC-Mn2" userLabel="Touch">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-90-rtO" userLabel="Upper_stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-vL-K2Q" userLabel="Lower_stack">
-                                        <rect key="frame" x="0.0" y="409" width="414" height="409"/>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="t6j-90-rtO" firstAttribute="top" secondItem="5BG-jC-Mn2" secondAttribute="top" id="6Jq-qf-5bd"/>
-                                    <constraint firstItem="t6j-90-rtO" firstAttribute="leading" secondItem="5BG-jC-Mn2" secondAttribute="leading" id="HFR-kV-nMi"/>
-                                    <constraint firstAttribute="trailing" secondItem="hdf-vL-K2Q" secondAttribute="trailing" id="ZXZ-fg-gSk"/>
-                                    <constraint firstItem="hdf-vL-K2Q" firstAttribute="top" secondItem="t6j-90-rtO" secondAttribute="bottom" id="dC2-il-wyr"/>
-                                    <constraint firstItem="hdf-vL-K2Q" firstAttribute="top" secondItem="t6j-90-rtO" secondAttribute="bottom" id="kM4-Sx-KSc"/>
-                                    <constraint firstAttribute="bottom" secondItem="hdf-vL-K2Q" secondAttribute="bottom" id="lfG-6L-g3P"/>
-                                    <constraint firstAttribute="trailing" secondItem="t6j-90-rtO" secondAttribute="trailing" id="rId-lU-lM1"/>
-                                    <constraint firstItem="hdf-vL-K2Q" firstAttribute="leading" secondItem="5BG-jC-Mn2" secondAttribute="leading" id="yvh-fM-gqM"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5BG-jC-Mn2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1nW-LV-bk1"/>
-                            <constraint firstItem="5BG-jC-Mn2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="J46-BZ-Iu2"/>
-                            <constraint firstItem="5BG-jC-Mn2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JBr-yt-y9a"/>
-                            <constraint firstItem="GsO-vz-gSj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mf1-9e-GYD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GsO-vz-gSj" secondAttribute="bottom" id="WFJ-RT-ue8"/>
-                            <constraint firstItem="GsO-vz-gSj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZXl-Gr-Lna"/>
-                            <constraint firstItem="5BG-jC-Mn2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aBG-2y-hak"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GsO-vz-gSj" secondAttribute="trailing" id="kxm-4X-Yg1"/>
-                            <constraint firstItem="GsO-vz-gSj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sih-nd-6RZ"/>
+                            <constraint firstItem="8ub-hk-oi4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OS4-Ss-QcX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8ub-hk-oi4" secondAttribute="bottom" id="QvJ-pp-i9X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ub-hk-oi4" secondAttribute="trailing" id="iWS-uO-AZm"/>
+                            <constraint firstItem="8ub-hk-oi4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="orq-y0-ifq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="Touch" destination="5BG-jC-Mn2" id="Ezo-7p-e1K"/>
+                        <outlet property="Imageview" destination="1Ki-ff-mF1" id="PfV-op-pS9"/>
+                        <outlet property="Label" destination="B9A-Uq-6Fs" id="YIc-WX-7co"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
