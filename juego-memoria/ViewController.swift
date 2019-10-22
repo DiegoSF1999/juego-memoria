@@ -78,6 +78,8 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! UICollectionViewController
         
+        vc.images = self.images
+        
         
         
     }
