@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F55A385235EFE270002CBEE /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F55A384235EFE270002CBEE /* Images.swift */; };
+		7F55A38B235F13BE0002CBEE /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F55A38A235F13BE0002CBEE /* Cell.swift */; };
+		7F55A38D235F16260002CBEE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F55A38C235F16260002CBEE /* Collection.swift */; };
 		7F5BA5ED2355BF5200AF7459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5BA5EC2355BF5200AF7459 /* AppDelegate.swift */; };
 		7F5BA5EF2355BF5200AF7459 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5BA5EE2355BF5200AF7459 /* ViewController.swift */; };
 		7F5BA5F22355BF5200AF7459 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F5BA5F02355BF5200AF7459 /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F55A384235EFE270002CBEE /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		7F55A38A235F13BE0002CBEE /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		7F55A38C235F16260002CBEE /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		7F5BA5E92355BF5200AF7459 /* juego-memoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "juego-memoria.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F5BA5EC2355BF5200AF7459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F5BA5EE2355BF5200AF7459 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,8 +60,11 @@
 		7F5BA5EB2355BF5200AF7459 /* juego-memoria */ = {
 			isa = PBXGroup;
 			children = (
-				7F5BA5EC2355BF5200AF7459 /* AppDelegate.swift */,
+				7F55A384235EFE270002CBEE /* Images.swift */,
 				7F5BA5EE2355BF5200AF7459 /* ViewController.swift */,
+				7F5BA5EC2355BF5200AF7459 /* AppDelegate.swift */,
+				7F55A38A235F13BE0002CBEE /* Cell.swift */,
+				7F55A38C235F16260002CBEE /* Collection.swift */,
 				7F5BA5F02355BF5200AF7459 /* Main.storyboard */,
 				7F5BA5F32355BF5700AF7459 /* Assets.xcassets */,
 				7F5BA5F52355BF5700AF7459 /* LaunchScreen.storyboard */,
@@ -136,6 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F5BA5EF2355BF5200AF7459 /* ViewController.swift in Sources */,
+				7F55A38D235F16260002CBEE /* Collection.swift in Sources */,
+				7F55A38B235F13BE0002CBEE /* Cell.swift in Sources */,
+				7F55A385235EFE270002CBEE /* Images.swift in Sources */,
 				7F5BA5ED2355BF5200AF7459 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

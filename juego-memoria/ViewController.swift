@@ -11,62 +11,78 @@ import UIKit
 class ViewController: UIViewController {
     
     
-// Outlets
-    
-    
 
+
+    @IBOutlet weak var Showview: UIStackView!
+    
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var Imageview: UIImageView!
-    let intro_image = #imageLiteral(resourceName: "memory")
-    let images = [#imageLiteral(resourceName: "pyke"), #imageLiteral(resourceName: "kata"), #imageLiteral(resourceName: "garen"), #imageLiteral(resourceName: "ashe")]
+
+    
+    var instance_images: Images
+    var images: [UIImage]
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.instance_images = Images()
+        self.images = instance_images.suffled_images
+        
+        super.init(coder: aDecoder)
+    }
+    
+    
+    
     
     // Codigo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     
-    Start()
-    
-        
-    
-    
         
         
+        Imageview.image = instance_images.intro_image
+        Label.text = ""
         
-    
-    
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            
+            self.Start()
+            
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + (Double(images.count * 2)) + 4.5) {
+
+            self.performSegue(withIdentifier: "change", sender: nil)
+
+        }
 
     }
     
-    
+
+
     func Start() {
-        Imageview.image = intro_image
-        Label.text = ""
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.Show()
+
+
+        for i in 0...self.images.count-1 {
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double((i*2)+2)) {
+
+            self.Label.text = String(i+1)
+
+            self.Imageview.image = self.images[i]
+
+
+            }
+
         }
-       
+
+     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! UICollectionViewController
+        
+        
+        
     }
     
-    func Show() {
-        var suffled_images = images
-        suffled_images.shuffle()
-        
-        let Count: Int = suffled_images.count
-        
-        //for i in 0...Count-1 {
-            
-            Label.text = String(1)
-            
-            Imageview.image = suffled_images[0]
-            
-            sleep(4)
-            
-            
-        //}
-        
-        
-    }
     
 }
+
 
