@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + (Double(images.count * 2)) + 4.5) {
 
-            self.performSegue(withIdentifier: "change", sender: nil)
+            self.performSegue(withIdentifier: "change", sender: Any?.self)
 
         }
 
@@ -76,12 +76,10 @@ class ViewController: UIViewController {
      }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! UICollectionViewController
+        let vc = segue.destination as! Collection
         
         vc.images = self.images
-        
-        
-        
+       
     }
     
     
