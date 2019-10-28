@@ -2,5 +2,8 @@ import UIKit
 
 class Cell: UICollectionViewCell {
     
-    @IBOutlet weak var Imageview: UIImageView!
+
+    @IBOutlet weak var button: UIButton!
+    
+    
 }

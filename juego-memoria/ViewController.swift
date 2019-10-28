@@ -9,9 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    
-
 
     @IBOutlet weak var Showview: UIStackView!
     
@@ -30,8 +27,6 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
     // Codigo
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,31 +38,28 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             
-            self.Start()
+           self.Start()
             
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + (Double(images.count * 2)) + 4.5) {
 
-            self.performSegue(withIdentifier: "change", sender: Any?.self)
+            self.performSegue(withIdentifier: "change", sender: nil)
 
         }
 
     }
     
-
-
     func Start() {
 
 
         for i in 0...self.images.count-1 {
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double((i*2)+2)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(i+i+2)) {
 
             self.Label.text = String(i+1)
 
             self.Imageview.image = self.images[i]
-
 
             }
 
@@ -76,10 +68,11 @@ class ViewController: UIViewController {
      }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! Collection
-        
-        vc.images = self.images
        
+        let vc = segue.destination as! Collection
+
+        vc.images = self.images
+
     }
     
     
