@@ -1,12 +1,8 @@
-//
-//  ViewController.swift
-//  juego-memoria
-//
-//  Created by alumnos on 15/10/2019.
-//  Copyright © 2019 alumnos. All rights reserved.
-//
-
 import UIKit
+
+public var Score: Int = 0   //CAMBIAME A 1 PARA JUGUAR
+
+public var ShowImages: [UIImage] = []
 
 class ViewController: UIViewController {
 
@@ -17,11 +13,9 @@ class ViewController: UIViewController {
 
     
     var instance_images: Images
-    var images: [UIImage]
     
     required init?(coder aDecoder: NSCoder) {
         self.instance_images = Images()
-        self.images = instance_images.suffled_images
         
         super.init(coder: aDecoder)
     }
@@ -31,38 +25,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        Imageview.image = instance_images.intro_image
-        Label.text = ""
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            
-           self.Start()
-            
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + (Double(images.count * 2)) + 4.5) {
-
-            self.performSegue(withIdentifier: "change", sender: nil)
-
-        }
+      Next()
 
     }
     
-    func Start() {
+    func StartGame() {
 
-
-        for i in 0...self.images.count-1 {
+        ShowImages = getImagesToPlay()
+        
+        for i in 0...ShowImages.count-1 {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + Double(i+i+2)) {
 
             self.Label.text = String(i+1)
 
-            self.Imageview.image = self.images[i]
+            self.Imageview.image = ShowImages[i]
 
             }
 
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + (Double(ShowImages.count * 2)) + 3.5) {
+            
+           self.performSegue(withIdentifier: "change", sender: nil)
+            
         }
 
      }
@@ -70,12 +56,51 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
         let vc = segue.destination as! Collection
+        
+        vc.main = self
 
-        vc.images = self.images
-
+    }
+    
+    
+    func getImagesToPlay()-> [UIImage]{
+        
+        var temp: [UIImage] = []
+        
+        for i in 0...Score+1 {
+            
+            temp.append(self.instance_images.images[i])
+            
+        }
+        
+        return temp.shuffled()
+        
+    }
+    
+    func End() {
+        Imageview.image = instance_images.end_image
+        Label.text = "ENORABUENA Has completado el juego"
+    }
+    
+    func Next() {
+        
+        if Score+1 ==  self.instance_images.images.count {
+            End()
+            
+        } else {
+        
+        Imageview.image = instance_images.intro_image
+        Label.text = "Nivel " + String(Int(Score+1))
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            
+            self.StartGame()
+            
+        }
+      
     }
     
     
 }
 
 
+}

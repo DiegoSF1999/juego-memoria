@@ -5,59 +5,60 @@ import UIKit
 
 class Collection: UICollectionViewController {
 
-        var images: [UIImage] = []
-        
-        
-    @IBOutlet var StackView: UICollectionView!
+    
+        var main: ViewController? = nil
+    
+        var PressedImages : [UIImage] = []
+    
+        var PickImages: [UIImage] = ShowImages
     
         override func viewDidLoad() {
             super.viewDidLoad()
-            StackView.dataSource = self
-            StackView.delegate = self
+            collectionView.dataSource = self
+            collectionView.delegate = self
             
-            StackView.isHidden = true
+            
+            PickImages.shuffle()
             
             properShow()
             
         }
+
+    @IBAction func Press(_ sender: UIButton) {
         
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        PressedImages.append(sender.backgroundImage(for: UIControl.State.normal)!)
         
-        return images.count
+        sender.isEnabled = false
         
-        }
+        sender.transform = .identity
+        var affineTransform = CGAffineTransform.identity
+        affineTransform = affineTransform.scaledBy(x: 0.001, y:
+            0.001)
+        UIView.animate(withDuration: 0.6, animations: {
+            sender.transform = affineTransform
+        })
         
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       
         
-        
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! Cell
-        
-            // Rellenar celda
-        
-           
-        cell.button.setBackgroundImage(self.images[indexPath.row], for: UIControl.State.normal)
-        
+        self.Correct()
         
         
-        
-            return cell
-        
-        }
-    
-    
-    
+    }
     
     func properShow() {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double(0.5)) {
+        if UIDevice.current.orientation.isPortrait {
+            
+            
+         collectionView.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(0.4)) {
             
             let value = UIInterfaceOrientation.landscapeRight.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
             
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double(1)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(0.8)) {
             
             let value = UIInterfaceOrientation.portrait.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
@@ -65,12 +66,67 @@ class Collection: UICollectionViewController {
             
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double(1.35)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(1.3)) {
             
-            self.StackView.isHidden = false
+            self.collectionView.isHidden = false
             
+        }
+        }
+    }
+    
+    func Correct() {
+        
+        if PressedImages.count == ShowImages.count {
+            
+            print("se meetio")
+            
+            
+            var check: Bool = true
+            
+            for i in 0...PressedImages.count-1 {
+                
+                if PressedImages[i] != ShowImages[i] {
+                        check = false
+                }
+                
+            }
+            
+            if check {
+                Score+=1
+                
+            } else if Score > 0 {
+                Score-=1
+            }
+            
+            print(Score)
+            
+            
+            self.main!.Next()
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
     
+    
+        //ESTRUCTURA DE COLLECTIONVIEW
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return PickImages.count
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! Cell
+        
+        // Rellenar celda
+        
+        cell.button.setBackgroundImage(PickImages[indexPath.row], for: UIControl.State.normal)
+        
+        return cell
+        
+    }
+    
+  
 }
