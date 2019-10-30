@@ -1,8 +1,12 @@
 import UIKit
 
-public var Score: Int = 0   //CAMBIAME A 1 PARA JUGUAR
+public var Score: Int = 0   //CAMBIAME A 0 PARA JUGAR Y A 5 PARA GANAR
 
 public var ShowImages: [UIImage] = []
+
+var Is_initialized: Bool = false
+
+public var Win: Bool = true
 
 class ViewController: UIViewController {
 
@@ -66,9 +70,13 @@ class ViewController: UIViewController {
         
         var temp: [UIImage] = []
         
+        var suffled: [UIImage] = instance_images.images
+        
+        suffled.shuffle()
+        
         for i in 0...Score+1 {
             
-            temp.append(self.instance_images.images[i])
+            temp.append(suffled[i])
             
         }
         
@@ -87,11 +95,22 @@ class ViewController: UIViewController {
             End()
             
         } else {
+            
+            if !Is_initialized {
+                Imageview.image = instance_images.intro_image
+            } else {
+                
+                if Win {
+                    Imageview.image = instance_images.win_level_image
+                } else {
+                    Imageview.image = instance_images.lose_level_image
+                }
+            }
         
-        Imageview.image = instance_images.intro_image
+        
         Label.text = "Nivel " + String(Int(Score+1))
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             
             self.StartGame()
             

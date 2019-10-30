@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forest_horizontal" translatesAutoresizingMaskIntoConstraints="NO" id="kmd-UA-xv3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <variation key="heightClass=compact-widthClass=regular" image="forest_horizontal2"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8ub-hk-oi4" userLabel="Stackview">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
@@ -27,7 +31,7 @@
                                             <constraint firstAttribute="height" constant="120" id="rfz-Bh-Z8R"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact-widthClass=regular">
                                             <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,18 +41,23 @@
                                         <rect key="frame" x="0.0" y="120" width="414" height="698"/>
                                     </imageView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="kmd-UA-xv3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4KO-9X-Z6I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kmd-UA-xv3" secondAttribute="bottom" id="NbC-rK-WJy"/>
                             <constraint firstItem="8ub-hk-oi4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OS4-Ss-QcX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8ub-hk-oi4" secondAttribute="bottom" id="QvJ-pp-i9X"/>
+                            <constraint firstItem="kmd-UA-xv3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eYd-IS-KeL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ub-hk-oi4" secondAttribute="trailing" id="iWS-uO-AZm"/>
                             <constraint firstItem="8ub-hk-oi4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="orq-y0-ifq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kmd-UA-xv3" secondAttribute="trailing" id="xK3-2E-anY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="heightClass=compact-widthClass=regular">
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         </variation>
                     </view>
                     <connections>
@@ -69,13 +78,18 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="OSc-ay-N2d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="layoutMargins" id="nRi-P1-b0F">
                             <size key="itemSize" width="150" height="200"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forest_horizontal" id="JRv-xI-dDG">
+                            <rect key="frame" x="0.0" y="-44" width="414" height="896"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <variation key="heightClass=compact-widthClass=regular" image="forest_horizontal2"/>
+                        </imageView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="cYG-lo-klc" customClass="Cell" customModule="juego_memoria" customModuleProvider="target">
                                 <rect key="frame" x="8" y="8" width="150" height="200"/>
@@ -106,6 +120,9 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </variation>
                         <connections>
                             <outlet property="dataSource" destination="5kb-Sg-tnj" id="w6K-gk-3UB"/>
                             <outlet property="delegate" destination="5kb-Sg-tnj" id="TTX-pn-AH9"/>
@@ -114,10 +131,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEb-D9-BNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="809" y="167"/>
+            <point key="canvasLocation" x="1045" y="145"/>
         </scene>
     </scenes>
     <resources>
         <image name="ashe" width="600" height="813"/>
+        <image name="forest_horizontal" width="1920" height="1080"/>
+        <image name="forest_horizontal2" width="3840" height="2160"/>
     </resources>
 </document>

@@ -14,13 +14,15 @@ class Collection: UICollectionViewController {
     
         override func viewDidLoad() {
             super.viewDidLoad()
+            properShow()
             collectionView.dataSource = self
             collectionView.delegate = self
             
+            Is_initialized = true
             
             PickImages.shuffle()
             
-            properShow()
+            
             
         }
 
@@ -78,9 +80,6 @@ class Collection: UICollectionViewController {
         
         if PressedImages.count == ShowImages.count {
             
-            print("se meetio")
-            
-            
             var check: Bool = true
             
             for i in 0...PressedImages.count-1 {
@@ -93,13 +92,16 @@ class Collection: UICollectionViewController {
             
             if check {
                 Score+=1
+                Win = true
                 
-            } else if Score > 0 {
+            } else {
+                
+                Win = false
+                
+                if Score > 0 {
                 Score-=1
+                }
             }
-            
-            print(Score)
-            
             
             self.main!.Next()
             self.dismiss(animated: true, completion: nil)
