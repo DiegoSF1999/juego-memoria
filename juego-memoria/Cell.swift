@@ -5,5 +5,5 @@ class Cell: UICollectionViewCell {
 
     @IBOutlet weak var button: UIButton!
     
-    
+        // cada celda tiene un boton
 }
