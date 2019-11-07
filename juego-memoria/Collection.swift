@@ -42,26 +42,27 @@ class Collection: UICollectionViewController {
         })
         
                                 // codigo que ejecuta una animacion de hacerse pequeño hasta desaparecer
+        // se ha optado por desabilitar el boón y hacerlo más pequeño en vez de hacerlo desaparecer al instante con ".ishidden" debido a su fluidez visual
         
-        self.Correct()  //
+        self.Correct()  // Comprueba si se han presionado todos los botones y si es así comprueba si está bien el orden de las imagenes
         
         
     }
     
-    func properShow() {
+    func properShow() {     // funcion que gira la pantalla 2 veces en caso de estar en vertical. Esto es necesario para que los magenes se definan correctamente. Se ha elegido esta opción debio a que no existe ninguna otra.
         
-        if UIDevice.current.orientation.isPortrait {
+        if UIDevice.current.orientation.isPortrait {      // comprueba si la pantalla está en vertical (en horizontal no surge este problema)
             
             
-         collectionView.isHidden = true
+         collectionView.isHidden = true     // oculta la view para que el jugador no aprecie la operación
         DispatchQueue.main.asyncAfter(deadline: .now() + Double(0.4)) {
             
             let value = UIInterfaceOrientation.landscapeRight.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
+            UIDevice.current.setValue(value, forKey: "orientation")         // despues de 0,4 segundos gira la pantalla en horizontal
             
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double(0.8)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(0.8)) {     // despues de 0,8 segundos gira la pantalla en vertical
             
             let value = UIInterfaceOrientation.portrait.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
@@ -69,7 +70,7 @@ class Collection: UICollectionViewController {
             
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double(1.3)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(1.3)) {     // después de 1,3 segundos vuelve a mostrar la vista. esto es necesario debido al tiempo que dura la animacion de cambio de orientación
             
             self.collectionView.isHidden = false
             

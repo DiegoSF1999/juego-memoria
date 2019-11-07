@@ -23,5 +23,5 @@ class Images {
     // Aquí se ha utilizado un objeto llamado "imagenes" donde se guarda el "arte" del juego. Aunque no es un objeto realmente, he usado
     // esta lógica para poder cambiar fácilmente las imagenes que usa la aplicación y poder usar otra ambientación o tema en un futuro
     
-    
+    // otra opción sería declarar antes de la clase todas las imagenes, sin embargo es peor opción en cuanto a organización y a legibilidad
 }

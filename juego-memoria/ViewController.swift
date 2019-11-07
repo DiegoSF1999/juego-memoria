@@ -9,7 +9,8 @@ var Is_initialized: Bool = false        // Booleana que controla si la aplicaci�
 public var Win: Bool = true             // Booleana que se activa si el jugador compelta el juego
 
 
-// Se ha guardado estas booleanas fuera de la clase para que nunca de eliminen de la RAM y poder acceder a ellas fácilmente desde las 2 vistas
+// Se ha guardado estas booleanas fuera de la clase para que nunca se eliminen de la RAM y poder acceder a ellas fácilmente desde las 2 vistas
+// También se podrían declarar las variables en las 2 clases y enviar sus contenidos en a funcion "prepare to segue", sin embargo es peor opción ya que utiliza más memoria y ralentiza el funcionamiento de la aplicación
 // -----------------------------------------------------------
 
 class ViewController: UIViewController {
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
     }
     
     // código necesario para obtener las imagenes que se mostraran antes de que la vista cargue
+    // es necesario cargarlas en este momento ya que en dispositivos más lentos el jugador podría notar la ausencia de imagen
     // ----------------------------------------------------------------------------------
     
     
